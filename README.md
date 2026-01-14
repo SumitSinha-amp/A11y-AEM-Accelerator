@@ -9,7 +9,9 @@ The main features are:
 * Developer Interface : Scan single page or multiple page paths to find out accessibility issues based on WCAG guidelines , Reporting 
 * Author Interface: In Edit Mode , Authors or developers can scan page to find out accessibilty issues, highlight issue element, AI fix suggestions, Component Mapping or Component with issues. 
 
+<img width="3828" height="1639" alt="Screenshot 2026-01-14 170851" src="https://github.com/user-attachments/assets/b3388847-909c-4ab3-a42f-eaca01a891cc" />
 
+<img width="3839" height="1644" alt="Screenshot 2026-01-14 170931" src="https://github.com/user-attachments/assets/37615932-2084-4393-8cfb-27320ebc0374" />
 
 ## How to build
 
