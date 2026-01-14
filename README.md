@@ -1,20 +1,15 @@
-# Sample AEM project template
+# AEM A11y Accelerator- Initial Beta
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+AEM A11y Accelerator Tool is a integrated plugin tool for Accessibility .Based on Axe Core Library .
 
 ## Modules
 
-The main parts of the template are:
+The main features are:
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* it.tests: Java based integration tests
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, and templates
-* ui.content: contains sample content using the components from the ui.apps
-* ui.config: contains runmode specific OSGi configs for the project
-* ui.frontend: an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
-* ui.tests: Selenium based UI tests
-* all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
-* analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
+* Developer Interface : Scan single page or multiple page paths to find out accessibility issues based on WCAG guidelines , Reporting 
+* Author Interface: In Edit Mode , Authors or developers can scan page to find out accessibilty issues, highlight issue element, AI fix suggestions, Component Mapping or Component with issues. 
+
+
 
 ## How to build
 
