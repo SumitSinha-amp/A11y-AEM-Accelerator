@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Cloudflare Download"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <columns
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <selectedComponent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Select Component to Render"
+                                                name="./selectedComponent">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <ctaDownload
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Button"
+                                                        value="ctaDownload"/>
+                                                    <relatedLinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Links"
+                                                        value="relatedLinks"/>
+                                                </items>
+                                            </selectedComponent>
+                                            <buttonText
+                                                granite:class="buttonFields"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Button Text"
+                                                fieldLabel="Button Text"
+                                                maxlength="{Long}40"
+                                                name="./buttonText"/>
+                                            <ctaDownloadDetails
+                                                granite:class="buttonmultiFields"
+                                                granite:data="multifielddata"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Download Items">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./ctaDownloadDetails">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <downloadText
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Label of the Download Link"
+                                                                    fieldLabel="Download Text"
+                                                                    name="./downloadText"
+                                                                    required="{Boolean}true"/>
+                                                                <pathDestination
+                                                                    granite:class="path-destination"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                    fieldLabel="Link Destination"
+                                                                    name="./assetURL"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content/dam/keysight"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </ctaDownloadDetails>
+                                            <ssoproperties
+                                                granite:class="buttonFields"
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="SSO Entitlement"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <ssoEnabled
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        emptyText="Is SSO Enabled"
+                                                        fieldLabel="Is SSO Enabled"
+                                                        name="./isSsoEnabled">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <yes
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Yes"
+                                                                value="yes"/>
+                                                            <no
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="No"
+                                                                value="no"/>
+                                                        </items>
+                                                    </ssoEnabled>
+                                                    <group
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        emptyText="Select SSO Group"
+                                                        fieldLabel="SSO Groups"
+                                                        multiple="{Boolean}true"
+                                                        name="./ssoGroup">
+                                                        <datasource
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="/etc/keysight/api/ssoGroupPopulate"/>
+                                                    </group>
+                                                </items>
+                                            </ssoproperties>
+                                            <relatedLinksText
+                                                granite:class="linksFields"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Button Text"
+                                                fieldLabel="Button Text"
+                                                maxlength="{Long}40"
+                                                name="./relatedLinksButtonText"/>
+                                            <relatedItemsList
+                                                granite:class="linksmultiFields"
+                                                granite:data="multifielddata"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Related Items">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./relatedLinkDetails">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <downloadText
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Label of the Download Link"
+                                                                    fieldLabel="Download Text"
+                                                                    name="./linksDownloadText"
+                                                                    required="{Boolean}true"/>
+                                                                <pathDestination
+                                                                    granite:class="path-destination"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                                    fieldLabel="Link Destination"
+                                                                    name="./relatedAssetURLlinks"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content/dam/keysight"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </relatedItemsList>
+                                        </items>
+                                    </columns>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

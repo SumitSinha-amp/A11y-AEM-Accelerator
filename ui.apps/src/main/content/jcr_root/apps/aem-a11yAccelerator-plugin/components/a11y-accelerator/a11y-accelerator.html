@@ -1,0 +1,72 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='granite.ui.coral.foundation,coral.ui3,granite.ui.foundation,granite.ui.coralui3,a11y-accelerator.console,a11y-accelerator-tool-clientlib'}" />
+
+<div class="a11y-tool-container">
+ <h2 class="a11y-tool-title"> <img src="/apps/aem-a11yAccelerator-plugin/components/a11y-accelerator/clientlibs/a11y-logo2.svg" class="logo" alt="A11y Accelerator Logo">Accessibility Accelerator <sup>Beta</sup></h2>
+    <div class="scan-mode-switch">
+      <label>Scan Mode:</label>
+      <coral-radio-group id="scan-mode" name="scan-mode">
+        <coral-radio value="single" checked>Single Page</coral-radio>
+        <coral-radio value="multiple">Multiple Pages</coral-radio>`
+      </coral-radio-group>
+    </div>
+  <form id="scan-form" is="coral-form" class="coral-Form coral-Form--aligned" method="POST">
+
+    <!-- Pathfield and Scan Button Side-by-Side -->
+    <div class="coral-Form-fieldwrapper a11y-pathfield-wrapper">
+      <div class="a11y-pathfield-container">
+        <sly data-sly-resource="${'rootPathField' @
+          resourceType='granite/ui/components/coral/foundation/form/pathfield'
+        }"></sly>
+
+        <button id="scan-button" type="submit" is="coral-button" variant="primary" icon="search" title="Scan Page">
+          Scan
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- Status Alert -->
+  <div id="status-alerts" class="coral-Alert coral-Alert--info is-hidden" hidden>
+    <coral-alert-content>
+      <p></p>
+    </coral-alert-content>
+  </div>
+
+  <!-- Results Section -->
+  <section id="scan-results" class="coral-Well is-hidden">
+    <h3 class="a11y-results-title">Select a Page or Path to start</h3>
+    <div id="scan-page"></div>
+  </section>
+
+  <!-- Accessibility Code Occurences Context Modal -->
+<coral-dialog id="code-context-modal" variant="default" closable>
+  <coral-dialog-header>HTML Context Viewer</coral-dialog-header>
+  <coral-dialog-content>
+    <div id="occurrence-nav" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <button id="occ-prev" is="coral-button" variant="quiet" icon="chevronLeft">Prev</button>
+      <span id="occurrence-counter">Occurrence 1</span>
+      <button id="occ-next" is="coral-button" variant="quiet" icon="chevronRight">Next</button>
+    </div>
+    <div id="code-content" class="code-viewer"></div>
+  </coral-dialog-content>
+  <coral-dialog-footer>
+    <button is="coral-button" coral-close variant="primary">Close</button>
+  </coral-dialog-footer>
+</coral-dialog>
+
+
+<coral-dialog id="live-view-modal" variant="fullscreen" closable>
+  <coral-dialog-header>Live Page View</coral-dialog-header>
+  <coral-dialog-content>
+    <div id="live-view-wrapper" style="position:relative; height:80vh;">
+      <!-- iframe will be injected here -->
+    </div>
+  </coral-dialog-content>
+  <coral-dialog-footer>
+    <button is="coral-button" variant="primary" coral-close>Close</button>
+  </coral-dialog-footer>
+</coral-dialog>
+
+</div>

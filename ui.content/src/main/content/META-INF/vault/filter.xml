@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aem-a11yAccelerator-plugin" mode="merge"/>
+    <filter root="/content/aem-a11yAccelerator-plugin" mode="merge"/>
+    <filter root="/content/dam/aem-a11yAccelerator-plugin/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aem-a11yAccelerator-plugin" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,3 @@
+#base=js
+author-scanv2.js
+xlsx.min.js

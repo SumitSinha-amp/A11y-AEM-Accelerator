@@ -1,0 +1,5 @@
+{
+    "user.mapping":[
+      "aem-a11yAccelerator-plugin.core:serviceUserA11yAccelerator=serviceUserA11yAccelerator"
+    ]
+  }

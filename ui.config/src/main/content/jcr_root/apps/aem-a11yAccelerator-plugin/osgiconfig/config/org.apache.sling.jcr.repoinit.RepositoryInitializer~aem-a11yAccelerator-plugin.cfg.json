@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/aem-a11yAccelerator-plugin",
+        "create path (nt:unstructured) /content/dam/aem-a11yAccelerator-plugin/jcr:content",
+        "set properties on /content/dam/aem-a11yAccelerator-plugin/jcr:content\n  set cq:conf{String} to /conf/aem-a11yAccelerator-plugin\n  set jcr:title{String} to \"AEM A11y Accelerator Plugin\"\nend"
+    ]
+}

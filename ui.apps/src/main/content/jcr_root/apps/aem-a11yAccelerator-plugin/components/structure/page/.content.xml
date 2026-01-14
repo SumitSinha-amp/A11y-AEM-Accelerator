@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:description="A tool to scan and auto-remediate accessibility issues on AEM pages."
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Accessibility Accelerator Tool"
+        sling:resourceType="granite/ui/components/shell/page"
+        consoleId="a11y-accelerator-tool">
+        <head jcr:primaryType="nt:unstructured">
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[granite.ui.coral.foundation,granite.ui.commons,a11y-accelerator-tool-clientlib, a11y-accelerator.console]"/>
+        </head>
+        <title
+            jcr:description="Scan and fix accessibility issues automatically."
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Accessibility Accelerator Tool"
+            sling:resourceType="granite/ui/components/shell/title"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                    <items jcr:primaryType="nt:unstructured">
+                        <scanTab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Scan Pages"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <form
+                                    granite:id="accessibility-scan-form"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/aem-a11yAccelerator-plugin/components/a11y-accelerator"
+                                    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <pathField
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Select Root Page Path"
+                                            forceSelection="{Boolean}true"
+                                            name="./rootPath"
+                                            placeholder="Select a page to scan"
+                                            required="{Boolean}true"
+                                            rootPath="/content"/>
+                                        <submitButton
+                                            granite:id="scan-button"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            icon="search"
+                                            text="Scan"
+                                            variant="primary"/>
+                                    </items>
+                                </form>
+                                <resultsWell
+                                    granite:id="scan-results"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/well"
+                                    hidden="{Boolean}true"
+                                    text="Scan results will appear here."/>
+                            </items>
+                        </scanTab>
+                        <summary
+                            granite:class="summary-tab"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Summary By Page"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <form
+                                    granite:id="summary-by-page"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/aem-a11yAccelerator-plugin/components/a11-summarybypage"
+                                    margin="{Boolean}true"/>
+                            </items>
+                        </summary>
+                        <detailedResults
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Detailed Results"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <form
+                                    granite:id="Detailed Results"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/aem-a11yAccelerator-plugin/components/a11y-detailed-results"
+                                    margin="{Boolean}true"/>
+                            </items>
+                        </detailedResults>
+                    </items>
+                </tabs>
+            </items>
+        </content>
+    </jcr:content>
+</jcr:root>

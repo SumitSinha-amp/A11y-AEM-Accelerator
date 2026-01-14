@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Tool to scan accessibility reports for a page and generate suggested fixes"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Accessibility Scan and Fix Tool"
+    href="/apps/aem-a11yAccelerator-plugin/components/structure/page.html"
+    icon="inbox"
+    id="a11y-tool"/>

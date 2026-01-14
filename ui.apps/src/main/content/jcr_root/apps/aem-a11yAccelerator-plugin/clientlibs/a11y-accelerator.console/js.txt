@@ -1,0 +1,4 @@
+js/console.js
+js/lz-string.min.js
+js/a11y-summary.js
+js/a11y-scan.js

@@ -1,0 +1,17 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='granite.ui.coral.foundation,coral.ui3,granite.ui.foundation,granite.ui.coralui3,a11y-accelerator.console,a11y-accelerator-tool-clientlib'}" />
+
+   <!-- Accessibility Summary Table -->
+<div class="a11y-summary-container u-padding">
+  <h2>Accessibility Summary</h2>
+
+  <div id="summary-header" class="summary-header">
+    <coral-alert variant="info">
+      <coral-alert-content>
+        Overview of all scanned pages with categorized issues.
+      </coral-alert-content>
+    </coral-alert>
+  </div>
+
+  <div id="summary-container" class="summary-table-container"></div>
+</div>

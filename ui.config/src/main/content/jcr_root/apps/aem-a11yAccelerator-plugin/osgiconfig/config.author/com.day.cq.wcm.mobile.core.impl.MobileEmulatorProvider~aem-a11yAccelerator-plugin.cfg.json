@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "aem-a11yAccelerator-plugin/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

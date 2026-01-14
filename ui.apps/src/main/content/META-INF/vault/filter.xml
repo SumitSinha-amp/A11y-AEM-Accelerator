@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/aem-a11yAccelerator-plugin/clientlibs"/>
+    <filter root="/apps/aem-a11yAccelerator-plugin/components"/>
+    <filter root="/apps/aem-a11yAccelerator-plugin/i18n"/>
+     <!-- Your project paths -->
+    <filter root="/apps/aem-a11yAccelerator-plugin" mode="replace"/>
+
+    <filter root="/apps/cq/core" mode="update"/>
+
+    <!-- Overlay for Tools Console -->
+    <filter root="/apps/cq/core/content/nav/tools" mode="replace"/>
+
+    <filter root="/apps/cq/core/content/nav/tools/a11y-accelerator-tool" mode="replace"/>
+
+    <!-- Your custom tool under /apps -->
+    <filter root="/apps/aem-a11yAccelerator-plugin/components/structure/page" mode="replace"/>
+</workspaceFilter>
